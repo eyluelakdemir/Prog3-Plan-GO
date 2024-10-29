@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/laender") // Basis-URL für alle Routen in diesem Controller
+@RequestMapping("/laender")
 public class LandController {
     private List<Land> laender = new ArrayList<>();
 
@@ -18,7 +18,7 @@ public class LandController {
         laender.add(new Land("Japan", false, false));
     }
 
-    // GET-Route: Gibt die Liste aller Länder zurück
+    //Gibt die Liste aller Länder zurück
     @GetMapping("/laender")
     public List<Land> getLaender(@RequestParam(required = false) Boolean besucht,
                                  @RequestParam(required = false) Boolean geplant) {
@@ -28,8 +28,7 @@ public class LandController {
                         (geplant == null || land.isGeplant() == geplant))
                 .collect(Collectors.toList());
     }
-
-    // POST-Route: Fügt ein neues Land hinzu
+//Fügt ein neues Land hinzu
     @PostMapping("/laender")
     public void addLand(@RequestBody Land neuesLand) {
         laender.add(neuesLand);
