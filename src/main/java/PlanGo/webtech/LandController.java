@@ -18,20 +18,37 @@ public class LandController {
         laender.add(new Land("Japan", false, false));
     }
 
-    // GET-Route: Gibt die Liste aller Länder zurück
+    // GET: Gibt die Liste aller Länder zurück
     @GetMapping("/laender")
-    public List<Land> getLaender(@RequestParam(required = false) Boolean besucht,
-                                 @RequestParam(required = false) Boolean geplant) {
-        // Filtere nach besucht und geplant, falls Parameter übergeben werden
-        return laender.stream()
-                .filter(land -> (besucht == null || land.isBesucht() == besucht) &&
-                        (geplant == null || land.isGeplant() == geplant))
-                .collect(Collectors.toList());
+    public List<Land> getLaender() {
+        return laender;
     }
 
-    // POST-Route: Fügt ein neues Land hinzu
+    // POST: Fügt ein neues Land hinzu
     @PostMapping("/laender")
     public void addLand(@RequestBody Land neuesLand) {
         laender.add(neuesLand);
     }
+
+    // PUT: Aktualisiert ein Land basierend auf dem Namen
+    @PutMapping("/laender/{name}")
+    public String updateLand(@PathVariable String name, @RequestBody Land updatedLand) {
+        for (Land land : laender) {
+            if (land.getName().equalsIgnoreCase(name)) {
+                land.setBesucht(updatedLand.isBesucht());
+                land.setGeplant(updatedLand.isGeplant());
+                return "Land erfolgreich aktualisiert!";
+            }
+        }
+        return "Land mit dem Namen nicht gefunden!";
+    }
+
+    // DELETE: Löscht ein Land basierend auf dem Namen
+    @DeleteMapping("/laender/{name}")
+    public String deleteLand(@PathVariable String name) {
+        boolean removed = laender.removeIf(land -> land.getName().equalsIgnoreCase(name));
+        return removed ? "Land erfolgreich gelöscht!" : "Land mit dem Namen nicht gefunden!";
+    }
 }
+
+
