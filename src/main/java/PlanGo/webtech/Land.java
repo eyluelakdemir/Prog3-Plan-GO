@@ -4,17 +4,14 @@ public class Land {
     private String name;
     private boolean besucht;
     private boolean geplant;
-    private String notizen;
 
     public Land(String name, boolean besucht, boolean geplant) {
         this.name = name;
         this.besucht = besucht;
         this.geplant = geplant;
-        this.notizen = notizen;
     }
 
     // Getter und Setter
-
     public String getName() {
         return name;
     }
@@ -37,14 +34,5 @@ public class Land {
 
     public void setGeplant(boolean geplant) {
         this.geplant = geplant;
-    }
-
-
-    public String getNotizen() {
-        return notizen;
-    }
-
-    public void setNotizen(String notizen) {
-        this.notizen = notizen;
     }
 }
