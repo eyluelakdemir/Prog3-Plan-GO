@@ -11,13 +11,12 @@ public class LandController {
     private List<Land> laender = new ArrayList<>();
 
     public LandController() {
-        // Beispiel-Daten hinzufügen
         laender.add(new Land("Deutschland", true, false));
         laender.add(new Land("Italien", false, true));
         laender.add(new Land("Japan", false, false));
     }
 
-    // GET: Gibt die Liste aller Länder zurück
+    // Liste aller Länder zurück
     @GetMapping
     public List<Land> getLaender(@RequestParam(required = false) Boolean besucht,
                                  @RequestParam(required = false) Boolean geplant) {
@@ -35,7 +34,7 @@ public class LandController {
         return "Neues Land hinzugefügt: " + neuesLand.getName();
     }
 
-    // PUT: Aktualisiert ein Land basierend auf dem Namen
+    // Aktualisiert ein Land basierend auf dem Namen
     @PutMapping("/{name}")
     public String updateLand(@PathVariable String name, @RequestBody Land updatedLand) {
         for (Land land : laender) {
