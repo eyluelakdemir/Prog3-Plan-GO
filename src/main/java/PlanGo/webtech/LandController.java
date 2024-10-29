@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api") // Basis-URL für alle Routen in diesem Controller
+@RequestMapping("/laender") // Basis-URL für alle Routen in diesem Controller
 public class LandController {
     private List<Land> laender = new ArrayList<>();
 
