@@ -12,6 +12,7 @@ public class Land {
     }
 
     // Getter und Setter
+
     public String getName() {
         return name;
     }
@@ -35,4 +36,5 @@ public class Land {
     public void setGeplant(boolean geplant) {
         this.geplant = geplant;
     }
+
 }

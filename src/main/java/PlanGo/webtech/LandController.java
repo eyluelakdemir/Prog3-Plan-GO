@@ -28,7 +28,7 @@ public class LandController {
                 .toList();
     }
 
-    // POST: Fügt ein neues Land hinzu
+
     @PostMapping
     public String addLand(@RequestBody Land neuesLand) {
         laender.add(neuesLand);
@@ -48,10 +48,4 @@ public class LandController {
         return "Land mit dem Namen nicht gefunden!";
     }
 
-    // DELETE: Löscht ein Land basierend auf dem Namen
-    @DeleteMapping("/{name}")
-    public String deleteLand(@PathVariable String name) {
-        boolean removed = laender.removeIf(land -> land.getName().equalsIgnoreCase(name));
-        return removed ? "Land erfolgreich gelöscht: " + name : "Land mit dem Namen nicht gefunden!";
-    }
 }
