@@ -26,25 +26,25 @@ public class LandController {
                         (geplant == null || land.isGeplant() == geplant))
                 .toList();
     }
-
-
-    @PostMapping
-    public String addLand(@RequestBody Land neuesLand) {
-        laender.add(neuesLand);
-        return "Neues Land hinzugefügt: " + neuesLand.getName();
-    }
-
-    // Aktualisiert ein Land basierend auf dem Namen
-    @PutMapping("/{name}")
-    public String updateLand(@PathVariable String name, @RequestBody Land updatedLand) {
-        for (Land land : laender) {
-            if (land.getName().equalsIgnoreCase(name)) {
-                land.setBesucht(updatedLand.isBesucht());
-                land.setGeplant(updatedLand.isGeplant());
-                return "Land erfolgreich aktualisiert: " + name;
-            }
-        }
-        return "Land mit dem Namen nicht gefunden!";
-    }
+//
+//
+//    @PostMapping
+//    public String addLand(@RequestBody Land neuesLand) {
+//        laender.add(neuesLand);
+//        return "Neues Land hinzugefügt: " + neuesLand.getName();
+//    }
+//
+//    // Aktualisiert ein Land basierend auf dem Namen
+//    @PutMapping("/{name}")
+//    public String updateLand(@PathVariable String name, @RequestBody Land updatedLand) {
+//        for (Land land : laender) {
+//            if (land.getName().equalsIgnoreCase(name)) {
+//                land.setBesucht(updatedLand.isBesucht());
+//                land.setGeplant(updatedLand.isGeplant());
+//                return "Land erfolgreich aktualisiert: " + name;
+//            }
+//        }
+//        return "Land mit dem Namen nicht gefunden!";
+//    }
 
 }
