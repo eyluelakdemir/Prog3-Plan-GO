@@ -1,6 +1,4 @@
 package PlanGo.webtech;
-
-import PlanGo.webtech.persistence.LandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
