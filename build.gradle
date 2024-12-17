@@ -32,19 +32,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	dependencies {
-		// Spring Boot Starter Data JPA
-		implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-		// Datenbanktreiber, z. B. PostgreSQL (wenn du PostgreSQL nutzt)
-		runtimeOnly 'org.postgresql:postgresql'
-
-		// Weitere benötigte Abhängigkeiten (optional)
-		implementation 'org.springframework.boot:spring-boot-starter-web'
-		testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	}
-
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	testImplementation 'com.h2database:h2'
 }
 
 tasks.named('test') {
