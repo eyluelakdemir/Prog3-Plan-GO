@@ -24,5 +24,8 @@ import lombok.*;
 
         private Boolean geplant;
 
+        private Double lat;  // Breitengrad
+        private Double lng;  // Längengrad
+
     }
 

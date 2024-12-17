@@ -16,6 +16,7 @@ public class LandService {
         return this.repository.findAll();
     }
 
+
     public Iterable<Land> getLaender(final Boolean besucht, final Boolean geplant) {
         return StreamSupport.stream(this.getLaender().spliterator(), false)
                 .filter(land -> (besucht == null || Objects.equals(land.getBesucht(), besucht)) &&
