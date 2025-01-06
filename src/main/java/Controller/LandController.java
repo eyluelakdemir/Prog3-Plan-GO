@@ -1,5 +1,7 @@
-package PlanGo.webtech;
+package Controller;
 
+import Model.Land;
+import Service.LandService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,5 @@
-package PlanGo.webtech;
+package Repository;
+import Model.Land;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
