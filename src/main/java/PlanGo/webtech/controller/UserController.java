@@ -1,7 +1,7 @@
-package Controller;
+package PlanGo.webtech.controller;
 
-import Model.User;
-import Service.UserService;
+import PlanGo.webtech.model.User;
+import PlanGo.webtech.service.UserService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

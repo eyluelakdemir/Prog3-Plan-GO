@@ -1,6 +1,6 @@
-package Repository;
+package PlanGo.webtech.repository;
 
-import Model.ToDo;
+import PlanGo.webtech.model.ToDo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

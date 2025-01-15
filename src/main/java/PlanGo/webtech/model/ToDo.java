@@ -1,4 +1,4 @@
-package Model;
+package PlanGo.webtech.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,10 +21,10 @@ public class ToDo {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Primärschlüssel korrekt definiert
     private Long id;
 
-    private String title;
-
+    private String text; // <-- Muss hinzugefügt werden
+    private String category; // <-- Muss hinzugefügt werden
     private boolean completed;
 
-    private Long landId; // Verknüpfung zu einem Land
+    
 }
 

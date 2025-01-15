@@ -1,4 +1,4 @@
-package Model;
+package PlanGo.webtech.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
-@Entity
+@Entity(name = "plango_user")
 @Getter
 @Setter
 @NoArgsConstructor

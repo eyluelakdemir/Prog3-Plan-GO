@@ -1,7 +1,7 @@
-package Controller;
+package PlanGo.webtech.controller;
 
-import Model.BudgetPlaner;
-import Service.BudgetPlanerService;
+import PlanGo.webtech.model.BudgetPlaner;
+import PlanGo.webtech.service.BudgetPlanerService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -37,9 +37,11 @@ public class BudgetPlanerController {
 
     @PostMapping
     public ResponseEntity<BudgetPlaner> addBudgetEntry(@Valid @RequestBody BudgetPlaner budgetPlaner) {
+        System.out.println("Empfangene Daten im Backend: " + budgetPlaner);
         BudgetPlaner created = budgetPlanerService.addBudget(budgetPlaner);
         return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<BudgetPlaner> updateBudgetEntry(@PathVariable Long id, @RequestBody BudgetPlaner budgetPlaner) {

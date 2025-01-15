@@ -1,10 +1,11 @@
-package Controller;
+package PlanGo.webtech.controller;
 
-import Model.ToDo;
-import Service.ToDoService;
+import PlanGo.webtech.model.ToDo;
+import PlanGo.webtech.service.ToDoService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,11 @@ public class ToDoController {
     private final ToDoService toDoService;
 
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Iterable<ToDo>> getAllBudgetEntries() {
+        return ResponseEntity.ok(toDoService.getToDos());
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<ToDo> getToDoById(@PathVariable Long id) {
         return toDoService.getToDoById(id)
@@ -25,9 +31,15 @@ public class ToDoController {
 
     @PostMapping
     public ResponseEntity<ToDo> addToDo(@Valid @RequestBody ToDo toDo) {
+        // Stelle sicher, dass "text" und "category" korrekt gesetzt sind
+        if (toDo.getText() == null || toDo.getCategory() == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
         ToDo created = toDoService.addToDo(toDo);
         return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<ToDo> updateToDo(@PathVariable Long id, @RequestBody ToDo toDo) {

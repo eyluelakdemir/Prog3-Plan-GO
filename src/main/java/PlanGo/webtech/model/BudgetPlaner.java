@@ -1,9 +1,10 @@
-package Model;
+package PlanGo.webtech.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
@@ -16,14 +17,18 @@ public class BudgetPlaner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Primärschlüssel korrekt definiert
+    private Long id;
 
+    @NotNull
     private Double kosten;
+
+    @NotNull
     private Double budget;
+
     private String beschreibung;
 
     public Double calculateRemainingBudget() {
-        return budget - kosten;
+        return (budget != null ? budget : 0) - (kosten != null ? kosten : 0);
     }
 
     public String getBudgetStatus() {
@@ -35,6 +40,4 @@ public class BudgetPlaner {
         }
     }
 }
-
-
 

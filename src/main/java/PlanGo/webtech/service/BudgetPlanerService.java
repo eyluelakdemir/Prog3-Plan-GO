@@ -1,8 +1,8 @@
-package Service;
+package PlanGo.webtech.service;
 
 import org.springframework.stereotype.Service;
-import Model.BudgetPlaner;
-import Repository.BudgetPlanerRepository;
+import PlanGo.webtech.model.BudgetPlaner;
+import PlanGo.webtech.repository.BudgetPlanerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;

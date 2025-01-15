@@ -1,7 +1,7 @@
-package Service;
+package PlanGo.webtech.service;
 
-import Model.User;
-import Repository.UserRepository;
+import PlanGo.webtech.model.User;
+import PlanGo.webtech.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

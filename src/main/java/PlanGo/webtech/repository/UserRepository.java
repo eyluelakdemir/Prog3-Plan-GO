@@ -1,6 +1,6 @@
-package Repository;
+package PlanGo.webtech.repository;
 
-import Model.User;
+import PlanGo.webtech.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

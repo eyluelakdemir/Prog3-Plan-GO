@@ -1,6 +1,6 @@
-package Repository;
+package PlanGo.webtech.repository;
 
-import Model.BudgetPlaner;
+import PlanGo.webtech.model.BudgetPlaner;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

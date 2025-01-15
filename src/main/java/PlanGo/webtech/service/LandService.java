@@ -1,6 +1,6 @@
-package Service;
-import Model.Land;
-import Repository.LandRepository;
+package PlanGo.webtech.service;
+import PlanGo.webtech.model.Land;
+import PlanGo.webtech.repository.LandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

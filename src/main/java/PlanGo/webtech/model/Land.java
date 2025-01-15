@@ -1,4 +1,4 @@
-package Model;
+package PlanGo.webtech.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,9 +23,6 @@ import lombok.*;
         private Boolean besucht;
 
         private Boolean geplant;
-
-        private Double lat;  // Breitengrad
-        private Double lng;  // Längengrad
 
     }
 

@@ -1,7 +1,7 @@
-package Service;
+package PlanGo.webtech.service;
 
-import Model.ToDo;
-import Repository.ToDoRepository;
+import PlanGo.webtech.model.ToDo;
+import PlanGo.webtech.repository.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
