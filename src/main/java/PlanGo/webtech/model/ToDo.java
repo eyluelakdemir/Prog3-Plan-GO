@@ -21,8 +21,8 @@ public class ToDo {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Primärschlüssel korrekt definiert
     private Long id;
 
-    private String text; // <-- Muss hinzugefügt werden
-    private String category; // <-- Muss hinzugefügt werden
+    private String text;
+    private String category;
     private boolean completed;
 
     
